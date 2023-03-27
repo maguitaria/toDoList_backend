@@ -10,10 +10,9 @@ import cors from "cors";
 const app: Express = express();
 const PORT: any = process.env.PORT || 4000
 app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 app.use(cors())
 
-// const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@clustertodo.raz9g.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`
-const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@atlascluster.rtquvey.mongodb.net/${process.env.MONGO_DB}`
 
 app.get('/', (req: Request, res: Response) => {
     const pool = openDb()
