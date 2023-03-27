@@ -20,6 +20,7 @@ app.get('/', (req: Request, res: Response) => {
     pool.query('select * from task', (error, result) => {
         if (error) {
             res.status(500).json({ error: error.message })
+            console.error(error)
         } else {
             res.status(200).json(result.rows)
         }
@@ -33,6 +34,7 @@ app.post('/new', (req: Request, res: Response) => {
         [req.body.description], (error: Error, result: QueryResult) => {
             if (error) {
                 res.status(500).json({ error: error.message })
+                console.error(error)
             } else {
                 res.status(200).json(result.rows)
             }
@@ -49,6 +51,7 @@ app.delete('/delete/:id', async (req: Request, res: Response) => {
         (error: Error, result: QueryResult) => {
             if (error) {
                 res.status(500).json({ error: error.message })
+                console.error(error)
             } else {
                 res.status(200).json({ id: id })
             }
