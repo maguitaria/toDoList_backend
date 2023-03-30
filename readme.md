@@ -2,7 +2,7 @@
 
 ## This is a project for OAMK course.
 
-Deployed site can be viewed (here) [https://todo-client-pz07.onrender.com ]
+Deployed site can be viewed [here] (https://todo-client-pz07.onrender.com)
 
 ## Functions implemented:
 
